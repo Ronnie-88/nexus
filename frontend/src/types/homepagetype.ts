@@ -44,6 +44,7 @@ interface TechSection {
 }
 
 interface HomePage {
+  navBar: NavBar;
   heroSection: HeroSection;
   programmingLanguagesSection: ProgrammingLanguagesSection;
   techSection: TechSection;

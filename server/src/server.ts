@@ -5,6 +5,8 @@ import connectDB from "./database/database";
 import mongoose from "mongoose";
 import homePageModel from "./models/homepagemodel";
 import HomePage from "./types/homepagetype";
+import navBarModel from "./models/navbarmodel";
+import NavBar from "./types/navbartype";
 
 dotenv.config();
 
@@ -12,6 +14,24 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 connectDB();
+
+app.get("/navbar", async (req, res) => {
+  try {
+    const navBarDoc: NavBar | null = await navBarModel.findOne();
+    if (navBarDoc) {
+      res.json(navBarDoc);
+    } else {
+      res.status(404).json({ message: "No navbar data found" });
+    }
+  } catch (error) {
+    const currentError = error as Error;
+    if (currentError) {
+      res.status(500).json({ message: currentError.message });
+    } else {
+      res.status(500).json({ message: "An unknown error occurred" });
+    }
+  }
+});
 
 app.get("/home", async (req, res) => {
   try {

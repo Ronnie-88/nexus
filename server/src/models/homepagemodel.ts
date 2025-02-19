@@ -1,14 +1,6 @@
 import mongoose from "mongoose";
 
 const homePageSchema = new mongoose.Schema({
-  navBar: {
-    initials: String,
-    buttonContent: {
-      about: String,
-      home: String,
-      projects: String,
-    },
-  },
   heroSection: {
     name: String,
     greeting: String,
