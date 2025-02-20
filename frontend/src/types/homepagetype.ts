@@ -1,27 +1,9 @@
+import HeroSection from "./herosectiontype";
 import NavBar from "./navbartype";
-
-interface Contact {
-  email: string;
-  linkedinLink: string;
-  linkedinIcon: string;
-}
-
-interface Location {
-  locationName: string;
-  icon: string;
-}
 
 interface ContentItem {
   name: string;
   icon: string;
-}
-
-interface HeroSection {
-  name: string;
-  greeting: string;
-  contact: Contact;
-  location: Location;
-  headShot: string;
 }
 
 interface ProgrammingLanguagesSection {

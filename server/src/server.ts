@@ -33,6 +33,23 @@ app.get("/navbar", async (req, res) => {
   }
 });
 
+app.get("/herosection", async (req, res) => {
+  try {
+    const homePageDoc: HomePage | null = await homePageModel.findOne();
+    if (homePageDoc) {
+      res.json(homePageDoc.heroSection);
+    } else {
+      res.status(404).json({ message: "No home page data found" });
+    }
+  } catch (error) {
+    const currentError = error as Error;
+    if (currentError) {
+      res.status(500).json({ message: currentError.message });
+    } else {
+      res.status(500).json({ message: "An unknown error occurred" });
+    }
+  }
+});
 app.get("/home", async (req, res) => {
   try {
     const homePageDoc: HomePage | null = await homePageModel.findOne();

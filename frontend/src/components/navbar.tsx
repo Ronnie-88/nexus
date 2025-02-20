@@ -1,9 +1,10 @@
 import { fetchNavbarContent } from "../api/fetchnavbarcontent";
+import useContentFetcher from "../hooks/usecontentfetcher";
 import NavBar from "../types/navbartype";
 import useSWR from "swr";
 
 export default function Navbar() {
-  const { data: navBar, isLoading } = useSWR<NavBar | undefined>(
+  const { data: navBar, isLoading } = useContentFetcher<NavBar>(
     "http://localhost:5000/navbar",
     fetchNavbarContent
   );
@@ -49,21 +50,6 @@ function NavbarButtons({ navBar }: NavbarButtonsProps) {
           </li>
         </ul>
       </nav>
-      {/* <p> {JSON.stringify(navBar)}</p> */}
     </>
   );
 }
-
-// function useNavbar() {
-//   const { data, error, isLoading } = useSWR(
-//     "http://localhost:5000/navbar",
-//     fetchNavbarContent
-//   );
-//   if (data) {
-//     console.log(JSON.stringify(data));
-//   } else {
-//     console.log("data is undefined");
-//   }
-
-//   return { data, isError: error, isLoading };
-// }
