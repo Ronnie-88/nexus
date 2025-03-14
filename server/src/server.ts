@@ -92,7 +92,7 @@ app.get("/projects", async (req, res) => {
   }
 });
 
-app.get("/home", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const homePageDoc: HomePage | null = await homePageModel.findOne();
     if (homePageDoc) {
