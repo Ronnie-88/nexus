@@ -10,7 +10,6 @@ import About from "./types/abouttype";
 import aboutModel from "./models/aboutmodel";
 import Projects from "./types/projectstype";
 import projectsModel from "./models/projectsmodel";
-import { model } from "mongoose";
 
 dotenv.config();
 
@@ -110,5 +109,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+export default app;
