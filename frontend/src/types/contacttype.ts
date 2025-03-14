@@ -1,7 +1,8 @@
 interface Contact {
   email: string;
   linkedinLink: string;
-  linkedinIcon: string;
+  githubLink: string;
+  gitlabLink: string;
 }
 
 export default Contact;

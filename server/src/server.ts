@@ -2,11 +2,15 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./database/database";
-import mongoose from "mongoose";
 import homePageModel from "./models/homepagemodel";
 import HomePage from "./types/homepagetype";
 import navBarModel from "./models/navbarmodel";
 import NavBar from "./types/navbartype";
+import About from "./types/abouttype";
+import aboutModel from "./models/aboutmodel";
+import Projects from "./types/projectstype";
+import projectsModel from "./models/projectsmodel";
+import { model } from "mongoose";
 
 dotenv.config();
 
@@ -39,7 +43,7 @@ app.get("/herosection", async (req, res) => {
     if (homePageDoc) {
       res.json(homePageDoc.heroSection);
     } else {
-      res.status(404).json({ message: "No home page data found" });
+      res.status(404).json({ message: "No hero section data found" });
     }
   } catch (error) {
     const currentError = error as Error;
@@ -50,6 +54,44 @@ app.get("/herosection", async (req, res) => {
     }
   }
 });
+
+app.get("/about", async (req, res) => {
+  try {
+    const aboutDoc: About | null = await aboutModel.findOne();
+    if (aboutDoc) {
+      res.json(aboutDoc);
+    } else {
+      res.status(404).json({ message: "No about data found" });
+    }
+  } catch (error) {
+    const currentError = error as Error;
+    if (currentError) {
+      res.status(500).json({ message: currentError.message });
+    } else {
+      res.status(500).json({ message: "An unknown error occurred" });
+    }
+  }
+});
+
+app.get("/projects", async (req, res) => {
+  try {
+    const projectDoc: Projects | null = await projectsModel.findOne();
+
+    if (projectDoc) {
+      res.json(projectDoc);
+    } else {
+      res.status(404).json({ message: "No projects data found" });
+    }
+  } catch (error) {
+    const currentError = error as Error;
+    if (currentError) {
+      res.status(500).json({ message: currentError.message });
+    } else {
+      res.status(500).json({ message: "An unknown error occurred" });
+    }
+  }
+});
+
 app.get("/home", async (req, res) => {
   try {
     const homePageDoc: HomePage | null = await homePageModel.findOne();

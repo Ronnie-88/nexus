@@ -6,7 +6,6 @@ interface HeroSection {
   greeting: string;
   contact: Contact;
   location: Location;
-  headShot: string;
 }
 
 export default HeroSection;
