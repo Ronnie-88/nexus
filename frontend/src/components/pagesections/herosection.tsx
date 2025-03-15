@@ -20,40 +20,39 @@ export default function Herosection() {
     );
   }
   return (
-    <section className="flex gap-8 items-center mx-auto px-96 py-10 my-10">
+    <section className="sm:my-10 sm:py-5 sm:px-96 w-full flex flex-col  my-20 py-10  px-5 text-white">
       {herosection && (
         <>
-          <div className="grow max-w-lg">
-            <h1 className="text-6xl text-white my-4">{herosection.name}</h1>
-            <p className="text-white my-2">{herosection.greeting}</p>
-            <p className="text-slate-400">{herosection.contact.email}</p>
-            <div className="w-20 flex gap-1 my-2">
-              <a href={herosection.contact.linkedinLink} target="_blank">
-                <LinkedinIcon />
-              </a>
-              <a href={herosection.contact.githubLink} target="_blank">
-                <GithubIcon />
-              </a>
-              <a href={herosection.contact.gitlabLink} target="_blank">
-                <GitLabIcon />
-              </a>
-            </div>
-            <div className="flex gap-1">
-              <div className="w-6">
-                <img
-                  className="bg-black object-fill"
-                  src={herosection.location.icon}
-                />
-              </div>
-              <p className="text-white">{herosection.location.locationName}</p>
-            </div>
+          <h1 className="sm:my-4 text-6xl my-8">{herosection.name}</h1>
+          <p className=" sm:my-2 sm:w-[576px]  my-4 text-base w-96">
+            {herosection.greeting}
+          </p>
+
+          <p className="text-base text-slate-400 ">
+            {herosection.contact.email}
+          </p>
+          <div className="sm:w-36 sm:gap-3 w-40 flex gap-5 my-2">
+            <a href={herosection.contact.linkedinLink} target="_blank">
+              <LinkedinIcon />
+            </a>
+            <a href={herosection.contact.githubLink} target="_blank">
+              <GithubIcon />
+            </a>
+            <a href={herosection.contact.gitlabLink} target="_blank">
+              <GitLabIcon />
+            </a>
           </div>
-          {/* <div className="w-3/6 border">
-            <img
-              className="object-cover"
-              src="https://storage.cloud.google.com/nexus-home-page/c-plusplus-icon.png"
-            />
-          </div> */}
+          <div className="flex items-center gap-1">
+            <div className="sm:w-6 w-6">
+              <img
+                className="bg-black object-fill"
+                src={herosection.location.icon}
+              />
+            </div>
+            <p className="text-base text-nowrap">
+              {herosection.location.locationName}
+            </p>
+          </div>
         </>
       )}
     </section>

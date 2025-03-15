@@ -17,10 +17,13 @@ export default function AboutSection() {
     );
   }
   return (
-    <section className="flex gap-8 items-center  justify-center mx-auto px-96 py-10 my-10">
+    <section
+      className="flex sm:flex-row sm:gap-8 sm:justify-between sm:items-center sm:px-96 sm:py-10 sm:my-10
+    flex-col items-center my-2 py-10 px-5"
+    >
       {aboutsection && (
         <>
-          <div className="grow max-w-[400px]">
+          <div className="sm:grow sm:max-w-2xl my-2">
             <h1 className="text-6xl text-white my-4">About</h1>
             {aboutsection.about.map((paragragh: string, index) => {
               return (
