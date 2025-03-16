@@ -28,7 +28,7 @@ export default function AboutSection() {
           <div
             className="sm:flex sm:flex-col
           lg:grow lg:max-w-xs
-          xl:max-w-2xl 
+          xl:max-w-2xl xl:grow 
           my-2"
           >
             <h1 className="text-6xl my-4">About</h1>
@@ -41,7 +41,8 @@ export default function AboutSection() {
             })}
           </div>
           <div
-            className="lg:w-96 
+            className="lg:w-96
+            xl:min-w-96
           w-72 rounded-full overflow-hidden"
           >
             <img className="object-cover" src={aboutsection.aboutPic} />
