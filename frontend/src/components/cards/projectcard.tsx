@@ -15,7 +15,8 @@ export default function ProjectCard({
     <>
       <div
         id="main card"
-        className="border-slate-800 w-56 border p-3 flex flex-col items-center space-y-1 rounded-md"
+        className="sm:w-56 sm:space-y-1
+        border-slate-800 w-80 border p-3 flex flex-col items-center space-y-2 rounded-md"
       >
         <img src={cardPic} className="object-cover rounded-sm" />
         <p id="card title">{name}</p>

@@ -14,7 +14,12 @@ import UnrealEngineIcon from "../icons/unrealengineicon";
 
 export default function ToolsAndTechSection() {
   return (
-    <section className="sm:my-10 sm:py-5 sm:px-96 w-full flex flex-col my-10 px-5 text-white">
+    <section
+      className="sm:my-10 sm:py-5 sm:px-24
+      lg:px-48
+      xl:px-96
+      w-full flex flex-col my-10 px-5 text-white"
+    >
       <h1 className="text-5xl my-5">Tools and Tech</h1>
       <ul className="bg-[#007acc] rounded-2xl my-5 grid grid-cols-[repeat(auto-fit,minmax(112px,1fr))] p-2 max-w-3xl">
         <li>

@@ -31,12 +31,20 @@ export default function ProjectDetails() {
     <>
       {projects && validProjectID && (
         <>
-          <section className="flex items-center mx-auto px-96 py-10 text-white my-10">
+          <section
+            className="sm:my-10 sm:px-24 
+            lg:px-48
+          xl:px-96 xl:my-20
+          flex items-center w-full mt-20 py-10 px-5 text-white"
+          >
             <div>
               {validProjectID.name && (
                 <h1 className="text-6xl my-4">{validProjectID.name}</h1>
               )}
-              <div className="flex items-center justify-between gap-20">
+              <div
+                className="lg:flex-row lg:items-center lg:justify-between lg:gap-20
+              flex flex-col gap-5"
+              >
                 <div className="flex flex-col">
                   {validProjectID.projectdetails.role && (
                     <p className="text-4xl text-[#007acc] my-4">
@@ -104,21 +112,35 @@ export default function ProjectDetails() {
                   />
                 )}
               </div>
-              {validProjectID.projectdetails.responsibilities && (
-                <>
-                  <h2 className="text-4xl text-[#007acc]">Responsibilities</h2>
-                  <ul className="list-disc">
-                    {validProjectID.projectdetails.responsibilities?.map(
-                      (responsibility) => {
-                        return <li>{responsibility}</li>;
-                      }
-                    )}
-                  </ul>
-                </>
-              )}
+              {validProjectID.projectdetails.responsibilities &&
+                validProjectID.projectdetails.responsibilities.length > 0 && (
+                  <>
+                    <h2
+                      className=" lg:my-0
+                  text-4xl text-[#007acc] my-4"
+                    >
+                      Responsibilities
+                    </h2>
+                    <ul
+                      className="lg:px-0 
+                    list-disc px-5"
+                    >
+                      {validProjectID.projectdetails.responsibilities?.map(
+                        (responsibility) => {
+                          return <li>{responsibility}</li>;
+                        }
+                      )}
+                    </ul>
+                  </>
+                )}
             </div>
           </section>
-          <section className="flex gap-8 items-center mx-auto px-96 py-10 text-white">
+          <section
+            className="sm:px-24
+          lg:px-48 
+          xl:px-96 xl:py-10
+          flex gap-8 items-center mx-auto py-1 px-5 text-white"
+          >
             {validProjectID.projectdetails.projectlink && (
               <a
                 href={validProjectID.projectdetails.projectlink}

@@ -28,15 +28,15 @@ export default function Navbar() {
   return (
     <>
       <div
-        // className="border-b bg-black border-slate-800 mx-auto text-white flex justify-end items-center fixed top-0 left-0 right-0 bottom-[93%]
-        //  sm:sm:fixed sm:top-0 sm:left-0 sm:right-0 sm:flex sm:justify-between sm:items-center sm:px-96bottom-[94%]"
-        className={`border-b bg-black border-slate-800 mx-auto text-white fixed top-0 left-0 right-0 
-          sm:fixed sm:top-0 sm:left-0 sm:right-0 sm:flex sm:justify-between sm:items-center sm:px-96 sm:bottom-[94%]"
+        className={`sm:fixed sm:top-0 sm:left-0 sm:right-0 sm:flex sm:justify-between sm:items-center sm:bottom-[94%] sm:px-24 
+          lg:px-48 flex lg:justify-between lg:items-center"
+          xl:px-96
           ${
             isMenuOpen
               ? "flex flex-col items-center bottom-[50%]"
               : "flex justify-end items-center bottom-[93%]"
-          }`}
+          } 
+          border-b bg-black border-slate-800 text-white fixed top-0 left-0 right-0`}
       >
         {navBar && (
           <>
@@ -58,7 +58,11 @@ export default function Navbar() {
             >
               <RxArrowLeft className="text-[#007acc]" size="4em" />
             </div>
-            <div className="sm:border sm:w-10 sm:h-10 sm:rounded-full sm:flex sm:items-center sm:justify-center hidden">
+            <div
+              className="sm:w-10 sm:h-10 sm:rounded-full sm:flex sm:items-center sm:justify-center 
+              lg:w-10 lg:h-10 lg:rounded-full lg:flex lg:items-center lg:justify-center
+              hidden border"
+            >
               <NavLink to="home">{navBar.initials}</NavLink>
             </div>
             <NavbarButtons
@@ -87,29 +91,32 @@ function NavbarButtons({
   return (
     <>
       <nav
-        //className="sm:flex sm:flex-row sm:justify-between sm:h-full sm:items-center"
-        className={`sm:flex sm:flex-row sm:justify-between sm:h-full sm:items-center ${
-          isMenuOpen
-            ? "flex flex-col justify-center items-center w-full gap-10 mb-auto"
-            : "hidden"
-        }`}
+        className={`sm:flex sm:flex-row sm:justify-between sm:h-full sm:items-center 
+          ${
+            isMenuOpen
+              ? "flex flex-col justify-center items-center w-full gap-10 mb-auto"
+              : "hidden"
+          }`}
       >
         <NavLink
-          className="px-5 h-full text-2xl sm:text-base flex justify-center  items-center hover:bg-[#007acc]"
+          className="sm:text-base 
+          px-5 h-full text-2xl flex justify-center items-center hover:bg-[#007acc]"
           to="home"
           onClick={() => setMenuClose()}
         >
           {navBar.buttonContent.home}
         </NavLink>
         <NavLink
-          className="px-5 h-full text-2xl sm:text-base flex justify-center items-center hover:bg-[#007acc]"
+          className="sm:text-base 
+          px-5 h-full text-2xl flex justify-center items-center hover:bg-[#007acc]"
           to="about"
           onClick={() => setMenuClose()}
         >
           {navBar.buttonContent.about}
         </NavLink>
         <NavLink
-          className="px-5 h-full text-2xl sm:text-base flex justify-center items-center hover:bg-[#007acc]"
+          className="sm:text-base 
+          px-5 h-full text-2xl flex justify-center items-center hover:bg-[#007acc]"
           to="projects"
           onClick={() => setMenuClose()}
         >
