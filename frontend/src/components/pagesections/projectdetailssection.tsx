@@ -34,7 +34,8 @@ export default function ProjectDetails() {
           <section
             className="sm:my-10 sm:px-24 
             lg:px-48
-          xl:px-96 xl:my-20
+            xl:px-48
+            2xl:px-96 2xl:my-20
           flex items-center w-full mt-20 py-10 px-5 text-white"
           >
             <div>
@@ -43,6 +44,7 @@ export default function ProjectDetails() {
               )}
               <div
                 className="lg:flex-row lg:items-center lg:justify-between lg:gap-20
+                xl:flex-row xl:items-center xl:justify-between xl:gap-20
               flex flex-col gap-5"
               >
                 <div className="flex flex-col">
@@ -108,7 +110,8 @@ export default function ProjectDetails() {
                 {validProjectID.projectdetails.projectpic && (
                   <img
                     src={validProjectID.projectdetails.projectpic}
-                    className="object-cover rounded-sm w-80"
+                    className="sm:w-80 lg:min-w-72
+                    object-cover rounded-sm"
                   />
                 )}
               </div>
@@ -137,8 +140,9 @@ export default function ProjectDetails() {
           </section>
           <section
             className="sm:px-24
-          lg:px-48 
-          xl:px-96 xl:py-10
+          lg:px-48
+          xl:px-48
+          2xl:px-96 2xl:py-10
           flex gap-8 items-center mx-auto py-1 px-5 text-white"
           >
             {validProjectID.projectdetails.projectlink && (

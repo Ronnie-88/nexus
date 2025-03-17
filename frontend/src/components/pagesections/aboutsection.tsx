@@ -20,7 +20,8 @@ export default function AboutSection() {
     <section
       className=" sm:gap-8 sm:justify-between sm:items-center sm:py-10 sm:my-10 sm:px-24 
       lg:flex-row lg:px-48
-      xl:px-96
+      xl:px-48
+      2xl:px-96
     flex flex-col items-center my-2 py-10 px-5 w-full text-white"
     >
       {aboutsection && (
@@ -42,7 +43,8 @@ export default function AboutSection() {
           </div>
           <div
             className="lg:w-96
-            xl:min-w-96
+            xl:min-w-60
+            2xl:min-w-96
           w-72 rounded-full overflow-hidden"
           >
             <img className="object-cover" src={aboutsection.aboutPic} />

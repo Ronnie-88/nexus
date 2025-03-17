@@ -29,8 +29,10 @@ export default function Navbar() {
     <>
       <div
         className={`sm:fixed sm:top-0 sm:left-0 sm:right-0 sm:flex sm:justify-between sm:items-center sm:bottom-[94%] sm:px-24 
-          lg:px-48 flex lg:justify-between lg:items-center"
-          xl:px-96
+          lg:px-48 lg:justify-between lg:items-center"
+          xl:px-48
+          2xl:px-96
+          flex
           ${
             isMenuOpen
               ? "flex flex-col items-center bottom-[50%]"

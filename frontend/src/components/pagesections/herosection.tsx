@@ -23,7 +23,8 @@ export default function Herosection() {
     <section
       className="sm:my-10 sm:py-5 sm:px-24 
     lg:px-48
-    xl:px-96
+    xl:px-48
+    2xl:px-96
     w-full flex flex-col my-20 py-10 px-5 text-white"
     >
       {herosection && (

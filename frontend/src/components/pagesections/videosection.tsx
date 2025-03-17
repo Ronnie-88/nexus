@@ -8,7 +8,8 @@ export default function VideoSection({ videoLink }: VideoSectionProps) {
       <section
         className="sm:px-24 
         lg:flex lg:gap-8 lg:items-center lg:my-4 lg:px-48 lg:py-10
-        xl:px-96 
+        xl:px-48
+        2xl:px-96 
         px-5 text-white"
       >
         <iframe

@@ -20,7 +20,8 @@ export default function ProfessionalProjectsSection() {
     <section
       className="sm:my-10 sm:py-5 sm:px-24 
       lg:flex lg:items-center lg:px-48 lg:py-10  lg:mt-10
-      xl:px-96
+      xl:px-48
+      2xl:px-96
       w-full my-20 py-10 px-5 text-white"
     >
       <div className=" sm:space-y-10 sm:w-full">
